@@ -1,0 +1,43 @@
+.news-page {
+    width: 75%;
+    margin: auto;
+}
+
+.news-page h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.news-img {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.news-img img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.news-details {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.news-details span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.news-details a {
+    cursor: pointer;
+    color: red;
+    margin: auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
