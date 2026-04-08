@@ -69,7 +69,6 @@ const LiveNewsContextProvider = ({children}) => {
         news,
         categoryNews,
         category,
-        loading,
         idGenerator,
         setCategory,
         setLoading,

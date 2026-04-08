@@ -1,14 +1,2 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
-    background: #FAFAFA;
-}
-a{
-    text-decoration: none;
-    color: black;
-}
-.active{
-    color: red;
-}
+@import "tailwindcss";
+

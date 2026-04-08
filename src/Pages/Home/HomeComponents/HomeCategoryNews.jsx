@@ -14,19 +14,22 @@ const HomeCategoryNews = () => {
     }, [categoryNews])
 
     return (
-        <div className='cat-news-box'>
-            <h2>{category[0].toUpperCase() + category.slice(1)} News</h2>
-            <ul className='cat-news-list'>
+        <div className='w-full mt-5 flex flex-col items-start gap-2 '>
+            <h2 className='font-medium text-neutral-800 text-4xl mb-2'>{category[0].toUpperCase() + category.slice(1)} News</h2>
+            <ul className='flex flex-col px-2 gap-4 md:flex-row md:flex-wrap  '>
                 {
-                    News.slice(0, 5).map((item, index) => {
+                    News.slice(0, 4).map((item, index) => {
                         const slug = idGenerator(item?.title);
                         return (
                             <NavLink to={`/news/${slug}`} state={{topN: item}}>
-                                <li className='card' key={index}>
-                                    <div className='img-box'>
-                                        <img src={item?.urlToImage ? item.urlToImage : "/imgAlt.webp"}/>
+                                <li className='flex flex-col items-start justify-center md:w-55 rounded-md md:flex-col md:justify-start md:gap-2 border border-zinc-300 px-2 hover:bg-neutral-100 h-full ' key={index}>
+                                    <div
+                                        className="mt-2 h-55 w-full bg-cover rounded-md bg-no-repeat px-2  bg-clip-border bg-center "
+                                        style={{ backgroundImage: `url(${item.urlToImage? item.urlToImage:"imgAlt.webp"})` }}
+                                    >
+                                        {/*<img className='w-[95%] md:w-full md:h-full  rounded-md' src={item?.urlToImage ? item.urlToImage : "/imgAlt.webp"}/>*/}
                                     </div>
-                                    <div className='card-news-title'>
+                                    <div className='text-sm text-gray-600'>
                                         <span>{item?.title}</span>
                                     </div>
 
