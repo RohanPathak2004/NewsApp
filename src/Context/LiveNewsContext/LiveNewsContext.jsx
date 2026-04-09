@@ -8,7 +8,7 @@ const LiveNewsContextProvider = ({children}) => {
     const [news, setNews] = useState([]);
     const [category, setCategory] = useState("business");
     const [categoryNews, setCategoryNews] = useState([])
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [searchValue, setSearchValue] = useState("Global");
     const [displayValue, setDisplayValue] = useState("");
     const [searchedNews, setSearchedNews] = useState([]);
@@ -19,6 +19,7 @@ const LiveNewsContextProvider = ({children}) => {
 
     const fetchNews = async () => {
         try {
+            setLoading(true);
             const response = await fetch(`https://newsapi.org/v2/top-headlines?category=general&apiKey=${API_KEY}`);
             const data = await response.json();
             setNews(data.articles);
@@ -31,6 +32,7 @@ const LiveNewsContextProvider = ({children}) => {
     const fetchSearchedNews = async (searchValue) => {
         try {
             // Instead of hardcoded future date:
+            setLoading(true);
             const today = new Date();
             const fromDate = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000); // 30 days ago
             const fromDateString = fromDate.toISOString().split('T')[0];
@@ -40,6 +42,8 @@ const LiveNewsContextProvider = ({children}) => {
             setSearchedNews(data.articles);
         } catch (error) {
             console.log(error)
+        }finally {
+            setLoading(false)
         }
     }
     const fetchCategoryNews = async (category) => {
@@ -76,7 +80,8 @@ const LiveNewsContextProvider = ({children}) => {
         setSearchValue,
         displayValue,
         setDisplayValue,
-        searchedNews
+        searchedNews,
+        loading
     }
     return (
         <LiveNewsContext.Provider value={contextValue}>

@@ -16,13 +16,14 @@ const HomeLiveNewsComponent = () => {
             <h2 className='text-4xl font-medium'>Top Headlines</h2>
             <div className='w-full flex flex-col mt-5 gap-1 md:flex-row md:justify-between md:items-center md:gap-4'>
                 <NavLink to={`/news/${idGenerator(news[0]?.title)}`} state={{topN: news[0]}}>
+
                     <div className='news-img-title px-2 '>
                         <img
                             className='rounded-lg'
                             src={news[0]?.urlToImage || "/imgAlt.webp"}
                             alt={news[0]?.title || "News image"}
                         />
-                        <h4>{news[0]?.title || "News Title"}</h4>
+                        <h2 className='text-xl mt-2 mb-2'>{news[0]?.title || "News Title"}</h2>
                     </div>
                 </NavLink>
                 <ul className='w-full mt-5 px-2 md:w-1/2 flex flex-col gap-3 items-start'>

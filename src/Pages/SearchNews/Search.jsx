@@ -2,6 +2,8 @@ import React, {useContext, useEffect, useState} from 'react'
 import './Search.css'
 import {NavLink} from "react-router-dom";
 import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx";
+import Card from "../../Components/card.jsx";
+import Loader from "../../Components/Loader/Loader.jsx";
 
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const Search = () => {
@@ -11,64 +13,38 @@ const Search = () => {
         displayValue,
         setDisplayValue,
         idGenerator,
-        searchedNews
+        searchedNews,
+        loading
     } = useContext(LiveNewsContext)
-    const [news, setNews] = useState([]);
-    const [loading, setLoading] = useState(true);
     const handleSearch = () => {
         setSearchValue(displayValue);
     }
-    useEffect(() => {
-        if (searchedNews && searchedNews.length > 0) {
-            setNews(searchedNews);
-            setLoading(false);
-        }
-    }, [searchedNews])
-    if (loading) {
-        return (
-            <div>Loading...</div>
-        )
-    }
     return (
-        <div className='search-news-section'>
-            <div className="search-news-box">
-                <label>
+        <div className={'py-8'}>
+            <div >
+                <label htmlFor={'search'} className='w-full flex justify-center items-center gap-1'>
                     <input id="inputValue"
                            type="text"
                            value={displayValue}
                            onChange={e => setDisplayValue(e.target.value)}
-                           placeholder="Search..."/>
-                    <button onClick={handleSearch}>Search</button>
+                           placeholder="Search..."
+                           className='w-[50%] px-4 py-2 border border-neutral-500 focus:ring-neutral-500'/>
+                    <button className='bg-red-600 px-4 py-2 rounded-md text-white font-medium'
+                            onClick={handleSearch}>Search
+                    </button>
                 </label>
             </div>
-            <div>
-                Searched for:{displayValue !== "" && searchValue ? searchValue : null}
-            </div>
-            <div className="category-news-list">
-                < ul className="second-section">
-                    {news.slice(0, 16).map((topN, index) => {
-                        const slug = idGenerator(topN?.title);
-                        return (
 
-                            <NavLink to={`/news/${slug}`} state={{topN}}>
-                                <li key={index}>
-                                    <div className="list-details">
-                                        <div className='list-title'>{topN?.title}</div>
-                                        <div className='list-source'>Source: {topN?.source.name}</div>
-                                        <div className='list-time'>
-                                            <span>published: {(new Date(topN?.publishedAt)).toLocaleDateString()}</span>
-                                            <br/>
-                                            <span style={{color: "red"}}>read more</span>
-                                        </div>
-                                    </div>
-                                    <div className="list-img">
-                                        <img src={topN?.urlToImage ? topN.urlToImage : "/imgAlt.webp"}/>
-                                    </div>
-                                </li>
-                            </NavLink>
-                        )
-                    })}
-                </ul>
+            <div className='py-8'>
+                {loading ? <Loader/> : searchedNews?.slice(0, 10).map((topN, index) => {
+                    const slug = idGenerator(topN?.title);
+                    return (
+
+                        <NavLink className={'flex flex-col gap-2'} id={index} to={`/news/${slug}`} state={{topN}}>
+                            <Card news={topN}/>
+                        </NavLink>
+                    )
+                })}
             </div>
         </div>
     )
