@@ -26,7 +26,6 @@ const HomeCategoryNews = () => {
                                         className="mt-2 h-55 w-full bg-cover rounded-md bg-no-repeat px-2  bg-clip-border bg-center "
                                         style={{ backgroundImage: `url(${item.urlToImage? item.urlToImage:"imgAlt.webp"})` }}
                                     >
-                                        {/*<img className='w-[95%] md:w-full md:h-full  rounded-md' src={item?.urlToImage ? item.urlToImage : "/imgAlt.webp"}/>*/}
                                     </div>
                                     <div className='text-sm text-neutral-700 flex flex-col items-center justify-center'>
                                         <span>{item?.title}</span>

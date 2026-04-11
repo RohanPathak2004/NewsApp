@@ -5,10 +5,8 @@ import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx
 import Card from "../../Components/card.jsx";
 import Loader from "../../Components/Loader/Loader.jsx";
 
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const Search = () => {
     const {
-        searchValue,
         setSearchValue,
         displayValue,
         setDisplayValue,
@@ -16,7 +14,7 @@ const Search = () => {
         searchedNews,
         loading
     } = useContext(LiveNewsContext)
-    const handleSearch = (e) => {
+    const handleSearch = () => {
         setSearchValue(displayValue);
     }
     return (

@@ -1,17 +1,16 @@
-import React, {useContext, useEffect, useState} from 'react'
-import LiveNewsContextProvider, {LiveNewsContext} from '../../Context/LiveNewsContext/LiveNewsContext';
+import React, {useContext,useState} from 'react'
+import  {LiveNewsContext} from '../../Context/LiveNewsContext/LiveNewsContext';
 import './NewsByCategory.css'
 import Loader from "../../Components/Loader/Loader.jsx";
 import {NavLink} from "react-router-dom";
 import Card from "../../Components/card.jsx";
 
 const NewsByCategory = () => {
-    const {category, idGenerator, setCategory, categoryNews, setLoading, loading} = useContext(LiveNewsContext)
+    const {idGenerator, setCategory, categoryNews} = useContext(LiveNewsContext)
     const [selectedChild, setSelectedChild] = useState(0);
     const handleCategorySelection = (category, idx) => {
         setSelectedChild(idx);
         setCategory(category)
-        setSelected(true);
     }
     console.log(categoryNews, "from context");
     const categories = ['business', 'entertainment', 'health', 'sports', 'technology', 'science', 'general'];

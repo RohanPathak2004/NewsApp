@@ -1,11 +1,10 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx";
 import './TopHeadlines.css'
-import {NavLink, useParams} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import Card from "../../Components/card.jsx";
 
 const TopHeadlines = () => {
-    const {newsID} = useParams();
     const {news} = useContext(LiveNewsContext);
     // console.log(idGenerator("Rohan Pathak"));
     function idGenerator(title) {

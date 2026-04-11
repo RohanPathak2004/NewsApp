@@ -1,16 +1,12 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx";
-// import './HomeTopHeadLineSection.css'
-import Loader from '../../Components/Loader/Loader.jsx';
 import {NavLink} from "react-router-dom";
-import News from "../FullNews/News.jsx";
 
 const HomeTopHeadLineSection = () => {
     const {news, idGenerator} = useContext(LiveNewsContext);
 
 
 
-    // console.log(News)
     return (
         <div className='w-full py-4 '>
             <h2 className='text-4xl font-medium'>Top Headlines</h2>
