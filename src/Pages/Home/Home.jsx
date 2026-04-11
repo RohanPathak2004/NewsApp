@@ -1,9 +1,6 @@
 import React, {useContext} from 'react'
-import {LiveNewsContext} from '../../Context/LiveNewsContext/LiveNewsContext.jsx';  // Changed import
-import HomeLiveNewsComponent from "./HomeComponents/HomeLiveNewsComponent.jsx";
-// import './Home.css'
-import HomeCategoryNews from './HomeComponents/HomeCategoryNews.jsx';
-import Loader from '../../Components/Loader/Loader.jsx';
+import HomeTopHeadLineSection from "./HomeTopHeadLineSection.jsx";
+import HomeCategoryNews from './HomeCategoryNews.jsx';
 
 const Home = () => {
     // const {loading} = useContext(LiveNewsContext);
@@ -14,8 +11,8 @@ const Home = () => {
     // }
 
     return (
-        <div className='w-full py-4'>
-            <HomeLiveNewsComponent/>
+        <div className='w-full h-screen py-4'>
+            <HomeTopHeadLineSection/>
             <HomeCategoryNews/>
         </div>
     );

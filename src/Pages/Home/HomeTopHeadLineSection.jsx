@@ -1,11 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {LiveNewsContext} from "../../../Context/LiveNewsContext/LiveNewsContext.jsx";
-// import './HomeLiveNewsComponent.css'
-import Loader from '../../../Components/Loader/Loader.jsx';
+import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx";
+// import './HomeTopHeadLineSection.css'
+import Loader from '../../Components/Loader/Loader.jsx';
 import {NavLink} from "react-router-dom";
-import News from "../../FullNews/News.jsx";
+import News from "../FullNews/News.jsx";
 
-const HomeLiveNewsComponent = () => {
+const HomeTopHeadLineSection = () => {
     const {news, idGenerator} = useContext(LiveNewsContext);
 
 
@@ -17,7 +17,7 @@ const HomeLiveNewsComponent = () => {
             <div className='w-full flex flex-col mt-5 gap-1 md:flex-row md:justify-between md:items-center md:gap-4'>
                 <NavLink to={`/news/${idGenerator(news[0]?.title)}`} state={{topN: news[0]}}>
 
-                    <div className='news-img-title px-2 '>
+                    <div className='px-2 '>
                         <img
                             className='rounded-lg'
                             src={news[0]?.urlToImage || "/imgAlt.webp"}
@@ -44,4 +44,4 @@ const HomeLiveNewsComponent = () => {
         </div>
     )
 }
-export default HomeLiveNewsComponent
+export default HomeTopHeadLineSection

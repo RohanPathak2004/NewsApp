@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
-import HomeLiveNewsComponent from "../../Pages/Home/HomeComponents/HomeLiveNewsComponent";
+import HomeTopHeadLineSection from "../../Pages/Home/HomeTopHeadLineSection.jsx";
 import PropTypes from 'prop-types';
 
 export const LiveNewsContext = createContext({});

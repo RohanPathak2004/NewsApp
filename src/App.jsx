@@ -8,11 +8,12 @@ import TopHeadlines from './Pages/TopHeadlines/TopHeadlines.jsx';
 import NewsByCategory from './Pages/NewsByCategory/NewsByCategory.jsx';
 import LiveNewsContextProvider from './Context/LiveNewsContext/LiveNewsContext.jsx';
 import Container from "./Components/Container.jsx";
+import Footer from "./Components/Footer.jsx";
 
 function App() {
 
     return (
-        <div>
+        <div className=' h-screen'>
             <NavBar/>
             <LiveNewsContextProvider>
                 <Container>
@@ -28,6 +29,7 @@ function App() {
 
 
                 </Container>
+                {/*<Footer/>*/}
             </LiveNewsContextProvider>
         </div>
     )

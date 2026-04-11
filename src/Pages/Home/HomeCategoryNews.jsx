@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import './HomeCategoryNews.css'
 import {useContext} from 'react';
-import {LiveNewsContext} from '../../../Context/LiveNewsContext/LiveNewsContext.jsx';
+import {LiveNewsContext} from '../../Context/LiveNewsContext/LiveNewsContext.jsx';
 import {NavLink} from "react-router-dom";
 
 const HomeCategoryNews = () => {

@@ -16,7 +16,7 @@ const Search = () => {
         searchedNews,
         loading
     } = useContext(LiveNewsContext)
-    const handleSearch = () => {
+    const handleSearch = (e) => {
         setSearchValue(displayValue);
     }
     return (
@@ -28,14 +28,18 @@ const Search = () => {
                            value={displayValue}
                            onChange={e => setDisplayValue(e.target.value)}
                            placeholder="Search..."
+                           onKeyDown={(e)=>{e.key==='Enter'?handleSearch():null}}
                            className='w-[50%] px-4 py-2 border border-neutral-500 focus:ring-neutral-500'/>
                     <button className='bg-red-600 px-4 py-2 rounded-md text-white font-medium'
                             onClick={handleSearch}>Search
+
                     </button>
                 </label>
             </div>
-
-            <div className='py-8'>
+            {
+                searchedNews && searchedNews.length===0?<h2>No relevent result found...</h2>:null
+            }
+            <div className='py-8 min-h-screen'>
                 {loading ? <Loader/> : searchedNews?.slice(0, 10).map((topN, index) => {
                     const slug = idGenerator(topN?.title);
                     return (
