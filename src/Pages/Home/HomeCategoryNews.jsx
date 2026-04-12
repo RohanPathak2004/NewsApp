@@ -13,7 +13,7 @@ const HomeCategoryNews = () => {
     }, [categoryNews])
 
     return (
-        <div className='w-full mt-5 flex flex-col items-start gap-2 '>
+        <div className='w-full mt-5 flex flex-col items-start gap-2 dark:bg-black '>
             <h2 className='font-medium text-neutral-800 text-4xl mb-2'>{category[0].toUpperCase() + category.slice(1)} News</h2>
             <ul className='flex flex-col px-2 gap-4 md:flex-row md:flex-wrap  '>
                 {

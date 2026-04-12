@@ -13,7 +13,7 @@ import Footer from "./Components/Footer.jsx";
 function App() {
 
     return (
-        <div className=' h-screen'>
+        <div className=' dark:bg-black dark:text-white'>
             <NavBar/>
             <LiveNewsContextProvider>
                 <Container>

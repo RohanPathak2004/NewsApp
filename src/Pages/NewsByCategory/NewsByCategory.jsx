@@ -18,7 +18,7 @@ const NewsByCategory = () => {
     return (
         <div>
             <div>
-                <h2 className='font-medium text-2xl'>News By Categories</h2>
+                <h2 className='font-medium text-2xl sm:flex sm:justify-center sm:items-center '>News By Categories</h2>
                 <div className={`flex flex-wrap justify-center gap-4 mt-2 mb-2 `}>
                     {
                         categories.map((item, idx) => (
