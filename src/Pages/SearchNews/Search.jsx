@@ -1,5 +1,4 @@
 import React, {useContext, useEffect, useState} from 'react'
-import './Search.css'
 import {NavLink} from "react-router-dom";
 import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx";
 import Card from "../../Components/card.jsx";
@@ -27,7 +26,7 @@ const Search = () => {
                            onChange={e => setDisplayValue(e.target.value)}
                            placeholder="Search..."
                            onKeyDown={(e)=>{e.key==='Enter'?handleSearch():null}}
-                           className='w-[50%] px-4 py-2 border border-neutral-500 focus:ring-neutral-500'/>
+                           className='w-[50%] px-4 py-2 border border-neutral-500 focus:ring-neutral-500 dark:bg-neutral-300 dark:text-black'/>
                     <button className='bg-red-600 px-4 py-2 rounded-md text-white font-medium'
                             onClick={handleSearch}>Search
 

@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx";
-import './TopHeadlines.css'
 import {NavLink} from "react-router-dom";
 import Card from "../../Components/card.jsx";
 

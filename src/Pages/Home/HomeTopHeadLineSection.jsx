@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import {LiveNewsContext} from "../../Context/LiveNewsContext/LiveNewsContext.jsx";
 import {NavLink} from "react-router-dom";
 
@@ -10,7 +10,7 @@ const HomeTopHeadLineSection = () => {
     return (
         <div className='w-full py-4 '>
             <h2 className='text-4xl font-medium'>Top Headlines</h2>
-            <div className='w-full flex flex-col mt-5 gap-1 md:flex-row md:justify-between md:items-center md:gap-4'>
+            <div className='w-full flex flex-col mt-5 gap-1 md:flex-row md:justify-between md:items-center md:gap-4 dark:bg-neutral-900 dark:text-white dark:rounded-md px-4 py-8'>
                 <NavLink to={`/news/${idGenerator(news[0]?.title)}`} state={{topN: news[0]}}>
 
                     <div className='px-2 '>
@@ -27,7 +27,7 @@ const HomeTopHeadLineSection = () => {
                         const slug = idGenerator(item?.title);
                         return (
                             <NavLink to={`/news/${slug}`} state={{topN: item}}>
-                                <li className='flex flex-wrap' key={index}>
+                                <li className='flex flex-wrap dark:border-b dark:border-b-neutral-400 dark:border-spacing-0.5' key={index}>
                                     <button className=' text-sm px-3 py-1 bg-red-600 text-white animate-pulse rounded-md '>Live</button>
                                     <div>{item?.title || "News Title"}</div>
                                 </li>

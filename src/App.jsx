@@ -13,7 +13,7 @@ import Footer from "./Components/Footer.jsx";
 function App() {
 
     return (
-        <div className=' dark:bg-black dark:text-white'>
+        <div className=' dark:bg-neutral-800 dark:text-white'>
             <NavBar/>
             <LiveNewsContextProvider>
                 <Container>
