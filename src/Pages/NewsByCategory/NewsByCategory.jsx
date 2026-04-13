@@ -16,13 +16,13 @@ const NewsByCategory = () => {
 
     return (
         <div>
-            <div>
-                <h2 className='font-medium text-2xl sm:flex sm:justify-center sm:items-center '>News By Categories</h2>
+            <div className='flex flex-col gap-2'>
+                <h2 className='font-medium text-2xl sm:flex sm:justify-center sm:items-center mt-2 '>News By Categories</h2>
                 <div className={`flex flex-wrap justify-center gap-4 mt-2 mb-2 `}>
                     {
                         categories.map((item, idx) => (
                             <button
-                                className={`rounded-md  border border-neutral-300 px-4 py-2 text-neutral-700 transition-colors   ${selectedChild === idx ? 'bg-red-600 text-white dark:bg-red-600 ' : null}`}
+                                className={`rounded-md  border border-neutral-300 px-4 py-2 text-neutral-700 transition-colors dark:text-white  ${selectedChild === idx ? 'bg-red-600 text-white dark:bg-red-600 ' : null}`}
                                 key={idx}
                                 onClick={() => handleCategorySelection(item, idx)}>{item.charAt(0).toUpperCase() + item.slice(1)}</button>
                         ))
@@ -30,7 +30,7 @@ const NewsByCategory = () => {
 
                 </div>
             </div>
-            <div className={'py-8'}>
+            <div className={'py-8 flex flex-col gap-2'}>
             {
                 categoryNews ?
                     categoryNews.map((news, idx) => {

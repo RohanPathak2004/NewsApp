@@ -2,11 +2,11 @@
 
 A modern, responsive news application built with React that delivers the latest headlines in real-time. Browse news by
 categories, search for specific topics, and stay updated with current events from trusted sources.
-![Home screenshot](public/homeScreenShot.png)
-![TopHeadlines screenshot](public/headLines.png)
-![News by category](public/catnews.png)
-![News articles by search](public/searchNews.png)
-![App Screenshot](public/webscreenshot.png)
+![Home screenshot](public/NewsApp-Home-Page.png)
+![TopHeadlines screenshot](public/Top-headlines-page.png)
+![News by category](public/Category-News-Page.png)
+![News articles by search](public/News-Search.png)
+![App Screenshot](public/Full-News.png)
 
 ## 🚀 Features
 
@@ -115,7 +115,6 @@ The application is fully responsive and optimized for:
 
 ## 🔮 Future Enhancements
 
-- [ ] Dark mode support
 - [ ] Offline reading capability
 - [ ] Social media sharing
 - [ ] User preferences and favorites
